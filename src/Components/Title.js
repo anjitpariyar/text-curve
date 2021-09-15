@@ -1,16 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./title.module.css";
 
 const Title = ({ text, arc, radius, className }) => {
   const characters = text.split("");
   const degree = arc / characters.length;
+  const myStyle = {
+    margin: 0,
+    lineHeight: 1.15,
+    fontSize: "4rem",
+    textAlign: "center",
+    marginBottom: "0.5em",
+    position: "relative",
+    height: `${radius / 1.5}px`,
+  };
 
   return (
-    <h2
-      className={styles.Title + " " + className}
-      style={{ height: `${radius / 1.5}px` }}
-    >
+    <h2 className={className} style={myStyle}>
       {characters.map((char, i) => (
         <span
           key={`heading-span-${i}`}
