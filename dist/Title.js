@@ -13,8 +13,6 @@ var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _titleModule = _interopRequireDefault(require("./title.module.css"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const Title = _ref => {
@@ -26,11 +24,18 @@ const Title = _ref => {
   } = _ref;
   const characters = text.split("");
   const degree = arc / characters.length;
+  const myStyle = {
+    margin: 0,
+    lineHeight: 1.15,
+    fontSize: "4rem",
+    textAlign: "center",
+    marginBottom: "0.5em",
+    position: "relative",
+    height: "".concat(radius / 1.5, "px")
+  };
   return /*#__PURE__*/_react.default.createElement("h2", {
-    className: _titleModule.default.Title + " " + className,
-    style: {
-      height: "".concat(radius / 1.5, "px")
-    }
+    className: className,
+    style: myStyle
   }, characters.map((char, i) => /*#__PURE__*/_react.default.createElement("span", {
     key: "heading-span-".concat(i),
     style: {
